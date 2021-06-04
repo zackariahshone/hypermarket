@@ -1,0 +1,26 @@
+body{
+    height: 100%;
+}
+
+.row{
+    margin-top: 10%;
+    height: 100%;
+}
+.brandBanner{
+    box-shadow: 10px;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    padding: 5%;
+    text-align: center;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+}
+.col{
+    margin-bottom: 2%;
+}
+img{
+    width: 100%;
+    height: auto;
+}

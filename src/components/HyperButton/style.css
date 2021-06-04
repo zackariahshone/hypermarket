@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+body{
+    height: 100%;
+}
+.hyperContainer{
+    padding-top: 20%;
+    /* margin: 0 auto; */
+}
+.hyperButton{
+    font-family: 'Rock Salt', cursive;
+    height: 30%;
+    width: 60%;
+    margin-left: 20%;
+    border-style: solid;
+    border-color: rgb(4, 178, 190);
+    border-radius: 2px;
+    border-radius: 10px;
+    background-color: rgb(53, 55, 59);
+    color: white;
+    text-decoration: none;
+}
+.title{
+    font-size: 50px;
+    text-align: center;
+}
+@media only screen and (max-width: 550px) {
+    .hyperButton{
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+  }
