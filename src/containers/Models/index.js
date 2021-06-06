@@ -4,61 +4,48 @@
  *
  */
 
-import React from 'react';
+import React , { useState , useEffect} from 'react';
+import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 import { useParams } from 'react-router-dom';
 import './style.css'
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
+// import ATV from '../../components/ATV'
+import Car from '../../components/Cars'
+// import Toys from '../../components/Toys'
 import data from '../../bannerInfo.json';
-
-
 function Models() {
-  // const params = useParams();
-  // console.log(data);
+  
+  let [currentTitle, setTitle] = useState(null);
+  let [type, setType] = useState(null);
   const { id } = useParams();
   const { models } = data[id];
-  console.log(data[id].bannerName);
-  console.log(models);
-  return (
-    <>
-      <div>
-        <h1>{data[id].bannerName}</h1>
-      </div>
+  console.log(models[0].type);
+  
+  useEffect(
+    ()=>{
+     setType(models[0].type)
+     console.log(`this is ${type}`);
+    //  console.log(items);
+    })
 
+  // console.log(currentTitle);
+  {  
+  if(type !== 'car'){
+      return (
+        <>
+          <h1>this is {type}</h1>
+        </>
+      )
+    }
+    
+    else if (type === 'car'){
+        return(
+          <>
+        <Car />
+          </>
+        )
 
-      <Container>
-        <Row>
-          {models.map(model => (
-            <>
-
-              <Col xs={12} md={3}>
-                <Card className = 'px-1'>
-                  <Row>
-                    <Col>
-                      <p>{model.modelTitle}</p>
-                    </Col>
-                  </Row>
-                <Row>
-                  <Col xs={12} md={4}>
-                    <div className='img-holder'>
-                    </div>
-                  </Col>
-
-                  <Col xs={12} md={8}>
-                    <p> {model.modelDesc}</p>
-                  </Col>
-                </Row>
-                </Card>
-              </Col>
-            </>
-          ))}
-        </Row>
-      </Container>
-
-    </>
-  );
+      }
+    }
 }
 
 // Models.propTypes = {
