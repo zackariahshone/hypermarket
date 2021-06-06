@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import data from '../../bannerInfo.json';
 import API from '../../API/CarAPI'
+import BuyButton from '../../components/BuyButton';
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
 
@@ -58,7 +59,7 @@ function Cars() {
           {items.map(model => (
             <>
 
-              <Col xs={12} md={3}>
+              <Col xs={12} sm={6} md={4} lg={3} className = 'mb-2'>
                 <Card className = 'px-1'>
                   <Row>
                     <Col>
@@ -73,6 +74,7 @@ function Cars() {
 
                   <Col xs={12} md={8}>
                     <p> {model.type}</p>
+                    <BuyButton />
                   </Col>
                 </Row>
                 </Card>
@@ -80,11 +82,11 @@ function Cars() {
             </>
           ))}
         </Row>
+
       </Container>
 
     </>
     }
-
      
     </>
   );
